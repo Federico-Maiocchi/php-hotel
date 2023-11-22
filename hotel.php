@@ -43,11 +43,65 @@ $hotels = [
 // var_dump($hotels);
 // var_dump($hotels[0],'indice array');
 
+
+
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-primary" scope="col">Nome</th>
+            <th class="text-primary" scope="col">Descrizione</th>
+            <th class="text-primary" scope="col">Parcheggio</th>
+            <th class="text-primary" scope="col">voto</th>
+            <th class="text-primary" scope="col">Distanza</th>
+        </tr>
+    </thead>
+    <?php foreach ($hotels as $hotel) { 
+                $parking = '';
+
+                if ($hotel['parking'] === true ) {
+                    $parking = 'Diponibile';
+                } else {
+                    $parking = 'Non diponibile';
+                } 
+    ?>
+  
+    <tbody class="table-group-divider">
+
+        <tr>
+            <td class="fw-bold" > <?php echo $hotel['name']; ?> </td>
+            <td> <?php echo $hotel['description']; ?> </td>
+            <td> <?php echo $parking; ?> </td>
+            <td> <?php echo $hotel['vote']; ?> </td>
+            <td> <?php echo $hotel['distance_to_center']; ?> </td>  
+        </tr>
+    
+    </tbody>
+
+    <?php } ?>
+</table>
+
+</body>
+</html>
 
 
-<ul>
+
+
+<!-- ciclo for -->
+
+
+<!-- <ul>
     <?php 
         for ($i = 0; $i < count($hotels); $i++ ) {
         // var_dump($hotels[$i]);
@@ -59,43 +113,57 @@ $hotels = [
         <strong>Name</strong>
         <em><? echo $hotels[$i]['name'] ?></em>
     </li>
+
     <?php 
         }
     ?>
-</ul>
+</ul> -->
 
-<ul>
-    <?php 
-        foreach ($hotels as $key => $value) {
-        // var_dump($key,$value);
-    ?> 
+<!-- ciclo foreach -->
+
+<!-- <ul>
+<?php foreach ($hotels as $hotel) { 
+        $parking = '';
+
+        if ($hotel['parking'] === true ) {
+            $parking = 'Diponibile';
+        } else {
+            $parking = 'Non diponibile';
+        } 
+        ?> 
     <li>
         <strong>Name</strong>
-        <em>
-            <?php echo $value['name']; ?>
-        </em>
-    </li>
-    <li>
+        <p>
+            <em>
+                <?php echo $hotel['name']; ?>
+            </em>
+        </p>
         <strong>Descrizione</strong>
-        <em>
-            <?php echo $value['description']; ?>
-        </em>
-    </li>
-    <li>
+        <p>
+            <em>
+                <?php echo $hotel['description']; ?>
+            </em>
+        </p>
+        <strong>Parcheggio</strong>
+        <p>
+            <em>
+                <?php echo $parking; ?>
+            </em>
+        </p>
         <strong>Voto</strong>
-        <em>
-            <?php echo $value['vote']; ?>
-        </em>
-    </li>
-    <li>
+        <p>
+            <em>
+                <?php echo $hotel['vote']; ?>
+            </em>
+        </p>
         <strong>Distanza</strong>
-        <em>
-            <?php echo $value['distance_to_center']; ?>
-        </em>
+        <p>
+            <em>
+                <?php echo $hotel['distance_to_center']; ?>
+            </em>
+        </p>
     </li>
 
-    <?php 
-        }
-    ?>
+    <?php } ?>
 
-</ul>
+</ul> -->
