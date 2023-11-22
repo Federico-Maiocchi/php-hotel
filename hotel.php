@@ -41,7 +41,7 @@ $hotels = [
 ];
 
 // var_dump($hotels);
-var_dump($hotels[0],)
+// var_dump($hotels[0],'indice array');
 
 ?>
 
@@ -49,14 +49,23 @@ var_dump($hotels[0],)
 
 <?php 
 for ($i = 0; $i < count($hotels); $i++ ) {
-    var_dump($hotels[$i]);
+    // var_dump($hotels[$i]);
 ?>
 <ul>
     <?php
-    
-
-        // <li>
-        // </li>
+        foreach ($hotels[$i] as $key => $value) {
+            // var_dump($key, $value);  
+    ?>
+        <li>
+            <strong> 
+                <?php echo $key; ?> 
+            </strong>
+            <em>
+            <?php echo $value; ?>
+            </em>
+        </li>
+    <?php     
+    }    
     ?>
 </ul>
 
