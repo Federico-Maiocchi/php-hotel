@@ -47,29 +47,55 @@ $hotels = [
 
 
 
-<?php 
-for ($i = 0; $i < count($hotels); $i++ ) {
-    // var_dump($hotels[$i]);
-?>
 <ul>
-    <?php
-        foreach ($hotels[$i] as $key => $value) {
-            // var_dump($key, $value);  
+    <?php 
+        for ($i = 0; $i < count($hotels); $i++ ) {
+        // var_dump($hotels[$i]);
     ?>
-        <li>
-            <strong> 
-                <?php echo $key; ?> 
-            </strong>
-            <em>
-            <?php echo $value; ?>
-            </em>
-        </li>
-    <?php     
-    }    
+    <li>
+        <p><em>
+        <? echo $hotels[$i]['description'] ?>
+        </em></p>
+        <strong>Name</strong>
+        <em><? echo $hotels[$i]['name'] ?></em>
+    </li>
+    <?php 
+        }
     ?>
 </ul>
 
-<?php 
-}
+<ul>
+    <?php 
+        foreach ($hotels as $key => $value) {
+        // var_dump($key,$value);
+    ?> 
+    <li>
+        <strong>Name</strong>
+        <em>
+            <?php echo $value['name']; ?>
+        </em>
+    </li>
+    <li>
+        <strong>Descrizione</strong>
+        <em>
+            <?php echo $value['description']; ?>
+        </em>
+    </li>
+    <li>
+        <strong>Voto</strong>
+        <em>
+            <?php echo $value['vote']; ?>
+        </em>
+    </li>
+    <li>
+        <strong>Distanza</strong>
+        <em>
+            <?php echo $value['distance_to_center']; ?>
+        </em>
+    </li>
 
-?>
+    <?php 
+        }
+    ?>
+
+</ul>
